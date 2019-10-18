@@ -14,7 +14,6 @@
 *.userprefs
 
 # Build results
-[Bb]in/[Dd]ebug/10_18.exe
 10_18/bin/Debug/10_18.exe
 [Dd]ebugPublic/
 [Rr]elease/

@@ -9,14 +9,27 @@ namespace _10_18
 {
     class Program
     {
+        //string format C# (google search)
         static Dictionary<string, List<Jatekos>> csapatok;
         static void Main(string[] args)
         {
             Beolvas();
             Teszt();
+            OsszJovedelem();
 
 
             Console.ReadKey();
+        }
+
+        private static void OsszJovedelem()
+        {
+            foreach (var cs in csapatok)
+            {
+                foreach (var j in cs.Value)
+                {
+                    Console.WriteLine("{0, -23} {1,11:N0} USD", j.Nev + ":", j.EvesFizu * j.Evek);
+                }
+            }
         }
 
         private static void Teszt()

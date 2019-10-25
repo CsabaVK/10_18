@@ -19,7 +19,29 @@ namespace _10_18
             LegjobbFizu();
             FizuCsapatonkent();
             MaxMinDif();
+            LegjobbAtlag();
             Console.ReadKey();
+        }
+
+        private static void LegjobbAtlag()
+        {
+            float lszfa = float.MaxValue;
+            string lszafcsn = "";
+            foreach (var cs in csapatok)
+            {
+                int sum = 0;
+                foreach (var j in cs.Value)
+                {
+                    sum += j.EvesFizu;
+                }
+                float atlag = sum / (float)cs.Value.Count;
+                if (lszfa > atlag)
+                {
+                    lszfa = atlag;
+                    lszafcsn = cs.Key;
+                }
+            }
+            Console.WriteLine($"Legrosszabb átlagfizetés a {lszafcsn}-ne van (${lszfa})");
         }
 
         private static void MaxMinDif()

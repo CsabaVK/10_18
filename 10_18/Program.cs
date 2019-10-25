@@ -14,13 +14,31 @@ namespace _10_18
         static void Main(string[] args)
         {
             Beolvas();
-            Teszt();
+            //Teszt();
             OsszJovedelem();
             LegjobbFizu();
             FizuCsapatonkent();
             MaxMinDif();
             LegjobbAtlag();
+            //AtlagFizNBA();
             Console.ReadKey();
+        }
+
+        private static void AtlagFizNBA()
+        {
+            foreach (var cs in csapatok)
+            {
+                int sum = 0;
+                foreach (var j in cs.Value)
+                {
+                    sum += j.EvesFizu;
+                }
+                /*if (lszfa > atlag)
+                {
+                    lszfa = atlag;
+                    lszafcsn = cs.Key;
+                }*/
+            }
         }
 
         private static void LegjobbAtlag()
@@ -41,7 +59,7 @@ namespace _10_18
                     lszafcsn = cs.Key;
                 }
             }
-            Console.WriteLine($"Legrosszabb átlagfizetés a {lszafcsn}-ne van (${lszfa})");
+            Console.WriteLine($"Legrosszabb átlagfizetés a {lszafcsn}-ne van (${lszfa})\n");
         }
 
         private static void MaxMinDif()
